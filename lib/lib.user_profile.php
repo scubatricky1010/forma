@@ -4125,7 +4125,9 @@ class UserProfileData {
 
 			$stats[$id_c]['date_inscr'] = $date_inscr;
 			$stats[$id_c]['date_first_access'] = $date_first_access;
-			$stats[$id_c]['date_complete'] = $date_complete;
+			//debug
+			$stats[$id_c]['date_complete'] = '1234';
+			//$stats[$id_c]['date_complete'] = $date_complete;
 			$stats[$id_c]['score_init'] = '';
 			$stats[$id_c]['score_final'] = '';
 			$stats[$id_c]['access_count'] 	= '';

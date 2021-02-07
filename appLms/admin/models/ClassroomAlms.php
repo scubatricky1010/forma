@@ -5,7 +5,7 @@
 |   License http://www.gnu.org/licenses/old-licenses/gpl-2.0.txt            |
 \ ======================================================================== */
 
-//Model to retrieve data from the tables relating to classroom courses and attendance.  (c) Richard Howes 2021
+//Model to retrieve data from the tables relating to classroom courses and attendance.  (c) 2021
 // License  http://www.gnu.org/licenses/old-licenses/gpl-2.0.txt 
 
 Class ClassroomAlms extends Model {

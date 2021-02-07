@@ -71,10 +71,10 @@ $cfg['use_smtp_database']   = 'off';
 $cfg['use_smtp']            = 'off';
 $cfg['smtp_host']           = '';			// Options: hostname;hostname:port;...
 $cfg['smtp_port']           = '';			// Options: '' (default port) , port number
-$cfg['smtp_secure']         = '';			// Options: "", "ssl", "tls"
-$cfg['smtp_auto_tls']       = '';		// Options: true, false
-$cfg['smtp_user']           = '';
-$cfg['smtp_pwd']            = '';
+$cfg['smtp_secure']         = 'ssl';			// Options: "", "ssl", "tls"
+$cfg['smtp_auto_tls']       = 'on';		// Options: true, false
+$cfg['smtp_user']           = 'Administrator';
+$cfg['smtp_pwd']            = 'M00m1ns5265';
 $cfg['smtp_debug']          = '0';           // Options: debug level 0,1,2,3,...
 
 /**

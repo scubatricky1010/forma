@@ -1,11 +1,6 @@
 <?php defined("IN_FORMA") or die("Direct access is forbidden");
 
 /* ======================================================================== \
-|   FORMA - The E-Learning Suite                                            |
-|                                                                           |
-|   Copyright (c) 2013 (Forma)                                              |
-|   http://www.formalms.org                                                 |
-|   License  http://www.gnu.org/licenses/old-licenses/gpl-2.0.txt           |
 |                                                                           |
 |   from docebo 4.0.5 CE 2008-2012 (c) docebo                               |
 |   License http://www.gnu.org/licenses/old-licenses/gpl-2.0.txt            |
@@ -537,7 +532,9 @@ Class ClassroomAlmsController extends AlmsController {
 //      $db = sql_connect($cfg['db_host'], $cfg['db_user'], $cfg['db_pass']);
 //      sql_select_db($cfg['db_name']);
 
-      $today = getdate();
+      $today = date("Y-m-d h:i:sa");
+		
+	  /*$today = getdate();
       $mday = $today['mday'];
       if ($mday < 10)
         $mday = "0" . $mday;
@@ -554,7 +551,7 @@ Class ClassroomAlmsController extends AlmsController {
       $sec = $today['seconds'];
       if ($sec < 10)
         $sec = "0" . $sec;
-      $file_parameters = $mday . "-" . $month . "-" . $year . "_h" . $ore . "_" . $min . "_" . $sec;
+      $file_parameters = $mday . "-" . $month . "-" . $year . "_h" . $ore . "_" . $min . "_" . $sec;*/
 		//Course info
 		$id_course = Get::req('id_course', DOTY_INT, 0);
 		$id_date = Get::req('id_date', DOTY_INT, 0);
@@ -565,7 +562,7 @@ Class ClassroomAlmsController extends AlmsController {
       $edition_name = $row[1];
 
       header("Content-type: application/x-msdownload");
-      header("Content-Disposition: attachment; filename=export_presenze_[" . $course_code . "]_" . $file_parameters . ".xls");
+      header("Content-Disposition: attachment; filename=Export_StudentAttendance_[" . $course_code . "]_" . $today . ".xls");
       header("Pragma: no-cache");
       header("Expires: 0");
       
@@ -643,7 +640,8 @@ Class ClassroomAlmsController extends AlmsController {
 		require_once(_base_.'/lib/lib.json.php');
 
 		$json = new Services_JSON();
-
+		//Added &id_date selector to store date correctly in this function
+        $id_date = Get::req('id_date', DOTY_INT, 0);
 		$id_course = Get::req('id_course', DOTY_INT, false);
 		$field = Get::req('col', DOTY_MIXED, false);
 		$old_value = Get::req('old_value', DOTY_MIXED, false);

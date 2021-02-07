@@ -695,7 +695,7 @@ class DateManager
 		return $res;
 	}
 
-
+//Add a user into the learning_course_date_user table (date complete isn't added by this function)
 	public function addUserToDate($id_date, $id_user, $id_subscriber, $overbooking = FALSE)
 	{
 		if($this->controlDateUserSubscriptions($id_user, $id_date))
@@ -725,7 +725,9 @@ class DateManager
 	public function setDateFinished($id_date, $id_user)
 	{
 		$query =	"UPDATE ".$this->user_date_table
-					." SET date_complete = '".date('Y-m-d H:i:s')."'"
+			
+			//		." SET date_complete = '".date('Y-m-d H:i:s')."'"
+					." SET date_complete = '1971-01-01 00:00:01'"
 					." WHERE id_date = ".$id_date
 					." AND id_user = ".$id_user;
 
@@ -735,7 +737,7 @@ class DateManager
 	public function toggleDateFinished($id_date, $id_user)
 	{
 		$query =	"UPDATE ".$this->user_date_table
-					." SET date_complete = '0000-00-00 00:00:00'"
+					." SET date_complete = '1978-01-01 00:00:01'"
 					." WHERE id_date = ".$id_date
 					." AND id_user = ".$id_user;
 

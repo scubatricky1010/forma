@@ -459,7 +459,7 @@ Class ClassroomAlms extends Model {
 	public function savePresence()
 	{
 		$score_min = Get::req('score_min', DOTY_INT, 0);
-
+//$this->id_date
 		$user = $this->classroom_man->getUserForPresence($this->id_date);
 		$day = $this->getDateDay($this->id_date);
 		$test_type = $this->classroom_man->getTestType($this->id_date);

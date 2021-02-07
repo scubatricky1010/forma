@@ -333,7 +333,7 @@ class DateManager
 		
 		return $res;
 	}
-
+//retrieve the total count of the date occurences from the table
 	public function getDateNumDay($id_date)
 	{
 		$query =	"SELECT COUNT(id_day) as num_day"
@@ -386,7 +386,7 @@ class DateManager
 
 		return $res;
 	}
-
+//select all data from table where date matches specified date, order by earliest date_begin field
 	public function getDateDay($id_date)
 	{
 		$query =	"SELECT *"
@@ -721,7 +721,7 @@ class DateManager
 			return true;
 		return false;
 	}
-
+//set the finish date based on a user
 	public function setDateFinished($id_date, $id_user)
 	{
 		$query =	"UPDATE ".$this->user_date_table

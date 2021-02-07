@@ -8,10 +8,9 @@
 <?php
 	YuiLib::load();
 	
-	/* Insert a button to allow export of the table on this page to an excel file. */
+	/* Inserimento pulsante per esportazione della lista in excel */
 	echo	Form::openForm('excel_form', 'index.php?r='.$base_link_classroom.'/export&id_course='.$model->getIdCourse().'&amp;id_date='.$model->getIdDate())
-			//Button title hardcoded, replace with- Lang::t('_EXPORT_XLS', 'report') - to retrieve button text from database
-			.Form::getButton('export', 'export', 'Export Table to XLS File')
+			.Form::getButton('export', 'export', Lang::t('_EXPORT_XLS', 'report'))
 			.Form::closeForm();
 
 	echo	Form::openForm('presence_form', 'index.php?r='.$base_link_classroom.'/presence&id_course='.$model->getIdCourse().'&amp;id_date='.$model->getIdDate())

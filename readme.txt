@@ -1,6 +1,15 @@
+/* ======================================================================== \
+|   forma.lms- The E-Learning Suite                                         |
+|                                                                           |
+|   Copyright (c) 2013 (forma.lms)                                          |
+|   http://www.formalms.org                                                 |
+|   License  http://www.gnu.org/licenses/old-licenses/gpl-2.0.txt           |
+|                                                                           |
+\ ======================================================================== */
+
 -----------------------------------------------------------------------------
-performa 1.0.1
-Release date: Not Released
+forma.lms 2.2.1
+Release date: 2019 april 16
 -----------------------------------------------------------------------------
 
 
@@ -12,11 +21,17 @@ Index
 2.   Requirements
 2.1  Platform internal requirements
 3.   Installation procedure
+4.   Upgrade procedure
+4.1  Upgrade from version 2.xx
+4.2  Upgrade from version 1.xx
+4.3  Upgrade from docebo ce 3.x and 4.x
+5.   Loading a new language
+6.   Other
 
 
 ------------------------------------------------------------------------------
 
-0    RELEASE NOTES (1.0.1)
+0    RELEASE NOTES (2.2.1)
 
 For all bugfix and new features included in this release, please read changelog.txt
 Here are some notes from base release.
@@ -25,9 +40,9 @@ Attention
 From this release the templates system checks the version of the template.
 check and update your templates manifest as described in par. 2.1 
 
-0.1  RELEASE NOTES (1.0)
+0.1  RELEASE NOTES (2.0)
 
-Release date: not released
+Release date: 2018 june 19
 
 This is a new major release  with new features, redesign of the UI , many improvements
 
@@ -106,12 +121,16 @@ h) Back-end administration menu
 This software is released with GPL v2.0 license, please refer to the provided file license.txt for 
 details.
 
+The hardcoded "Powered by forma.lms CE" credit must NOT be removed, in respect to the work of the 
+project and community. 
+You are welcome to add your credits to the page footer using the provided configuration option.
+
 
 2. REQUIREMENTS
 
 Server specs: Linux, Windows, MacOs, Unix, Sun with
 - Apache 2.2.x or above  (on Windows also IIS can be used)
-- PHP  7.0.x
+- PHP  5.4.x  5.5.x 5.6.x  7.0.x
 - Mysql 5.0 or higher, mariadb  5.5 or higher
   db server engine must have transaction support (innodb recommended)
 - Doesn't matter if safe mode or register global are on or off
@@ -172,3 +191,54 @@ Depending on number of language chosen, this operation can take some time in ord
   The procedure may change for you the config.php file (if writable, or require you to download it
   and upload to the web root folder, if not)
 
+4.1 Upgrade from version 2.xx
+
+During upgrade from forma.lms 2.x  to forma.lms 2.2 and later, pay attention to
+a) Template
+   Template 2.0 and 2.1 are not compatible with 2.2 
+   During the upgrade the site template is updated to "standard".
+   Minimum template version required (see release notes)
+
+4.2 Upgrade from version 1.xx
+
+During upgrade from forma.lms 1.x  to forma.lms 2.xx, pay attention to
+a) Database
+   after upgrade the DB are not full compatible with forma.lms 1.xx, and there is no path to go back.
+   Made a backup before upgrade 
+b) Template
+   Template 1.xx are not compatible with 2.xx 
+   During the upgrade the site template is updated to "standard"
+c) Dropped feature
+d) Customscripts
+   All customization made through customscripts/ must be reviewed and ported to the 2.0 current 
+   version. forma.lms does not check base version file with your customized version in customscripts 
+   folder. There is no version check support for customscripts files
+
+e) The update detects the use of the mysql / mysqli driver and changes the configuration appropriately
+
+At the end of the upgrade process, check all the system configuration settings to validate your 
+needs. The update procedure tries to keep the settings, but new options have been added and others 
+have been removed
+
+Please, double check above release notes before upgrading
+
+ 
+4.3 Upgrade from docebo ce 3.x, docebo ce 4.x 
+
+You can directly upgrade your old docebo (either series 3.6.x and 4.x) installations to forma.lms 2.x
+The config.php file is completely changed from D36 and with more config options since D4.x
+The upgrade procedure change for you the config.php and write (if writable), or require you to 
+download it and upload to the web root folder.
+Coming from D36 review the config.php and add your own settings, if needed
+  
+
+5. LOADING A NEW LANGUAGE
+
+- Make sure that you have the required xml file on your PC (get it from installation tarball)
+- Go in the administration area
+- Go in language import/export
+- Select the xml file
+- Choose if you want to overwrite previous translation or not
+- Click Import
+
+6. OTHER

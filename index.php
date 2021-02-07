@@ -11,9 +11,6 @@
 |   License http://www.gnu.org/licenses/old-licenses/gpl-2.0.txt            |
 \ ======================================================================== */
 
-//Debug query string to page
-//echo 'Requested url ="' .$_SERVER['QUERY_STRING'].'"';
-
 define("IN_FORMA", true);
 define("_deeppath_", '');
 require(dirname(__FILE__).'/base.php');

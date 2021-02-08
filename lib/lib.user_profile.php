@@ -1900,8 +1900,8 @@ class UserProfileViewer {
         $html .= '<div class="row comunication">'; //pulsanti certificati-messaggi
 
         if ($perm_certificate) $html .= '<div class="col-xs-4"><a class="btn btn-default" href="index.php?r=lms/mycertificate/show&sop=unregistercourse">' . Lang::t('_MY_CERTIFICATE', 'menu_over') . '</a></div>';
-        if (isset($perm_competence) && $perm_competence) $html .= '<div class="col-xs-4"><a class="btn btn-default" href="index.php?modname=mycompetences&op=mycompetences&op=unregistercourse">' . Lang::t('_COMPETENCES', 'standard') . '</a></div>';
-
+        if (isset($perm_competence) && $perm_competence) $html .= '<div class="col-xs-4"><a class="btn btn-default" href="index.php?modname=mycompetences&sop=mycompetences&sop=unregistercourse">' . Lang::t('_COMPETENCES', 'standard') . '</a></div>';
+		//if (isset($perm_competence) && $perm_competence) $html .= '<div class="col-xs-4"><a class="btn btn-default" href="index.php?modname=mycompetences&op=mycompetences&op=unregistercourse">' . Lang::t('_COMPETENCES', 'standard') . '</a></div>';
 
         if ($unread_num > 0 && $perm_message) {
             $html .= '<div class="col-xs-4"><a class="btn btn-default" href="index.php?r=message/show&sop=unregistercourse">' . Lang::t('_MESSAGES', 'standard') . '<b class="num_notify"><i style="font-size:.78em">' . $unread_num . '</i></b></a></div>';
@@ -4126,7 +4126,7 @@ class UserProfileData {
 			$stats[$id_c]['date_inscr'] = $date_inscr;
 			$stats[$id_c]['date_first_access'] = $date_first_access;
 			//debug
-			$stats[$id_c]['date_complete'] = '1234';
+			$stats[$id_c]['date_complete'] = '1234'
 			//$stats[$id_c]['date_complete'] = $date_complete;
 			$stats[$id_c]['score_init'] = '';
 			$stats[$id_c]['score_final'] = '';
